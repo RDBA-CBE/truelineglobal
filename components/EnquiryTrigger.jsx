@@ -1,27 +1,37 @@
 'use client';
 
-export const ENQUIRY_MODAL_EVENT = 'trueline:open-enquiry';
+export const ENQUIRY_MODAL_EVENT =
+  'open-enquiry-modal';
+
+export function openEnquiryModal(
+  enquiryType = 'Buyer / Importer'
+) {
+  window.dispatchEvent(
+    new CustomEvent(
+      ENQUIRY_MODAL_EVENT,
+      {
+        detail: {
+          enquiryType,
+        },
+      }
+    )
+  );
+}
 
 export default function EnquiryTrigger({
-  children,
-  className = '',
+  children = 'Send Enquiry',
   enquiryType = 'Buyer / Importer',
-  ariaLabel,
+  className = '',
 }) {
-  const openModal = () => {
-    window.dispatchEvent(
-      new CustomEvent(ENQUIRY_MODAL_EVENT, {
-        detail: { enquiryType },
-      }),
-    );
+  const handleClick = () => {
+    openEnquiryModal(enquiryType);
   };
 
   return (
     <button
       type="button"
       className={className}
-      onClick={openModal}
-      aria-label={ariaLabel}
+      onClick={handleClick}
     >
       {children}
     </button>
