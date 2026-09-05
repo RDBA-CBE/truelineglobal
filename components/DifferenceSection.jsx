@@ -4,8 +4,7 @@ import { differenceBottom, differenceTop } from '@/lib/data';
 export default function DifferenceSection() {
   return (
     <section id="difference" className="section difference-section section-space">
-      <div className="network-divider" />
-
+    
       <div className="shell">
         <h2 className="section-title type-h2" data-reveal>
           Experience That Makes a Difference

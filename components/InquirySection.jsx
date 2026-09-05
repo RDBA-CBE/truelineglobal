@@ -11,7 +11,7 @@ const requirements = [
 
 export default function InquirySection() {
   return (
-    <section id="inquiry" className="inquiry-section section-space">
+    <section id="inquiry" className="inquiry-section">
       <div className="inquiry-grid">
         <article className="inquiry-card" data-reveal>
           <div className="inquiry-image">

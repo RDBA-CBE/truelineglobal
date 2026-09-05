@@ -35,7 +35,7 @@
   --font-ui: "IBM Plex Sans", sans-serif;
   --accent: #B38A48;
   --type-body-color: #393D45;
-  --section-space: 96px;
+  --section-space: 70px;
 }
 
 /* ==========================================================
@@ -318,7 +318,7 @@ main {
 ========================================================== */
 
 .network-section {
-  background: #fff;
+  background: #fff; border-bottom: 1px solid #dfe3e8;
 }
 
 .network-head {

@@ -3,7 +3,7 @@ import { regions, supplierMapPoints } from '@/lib/data';
 
 export default function SupplierNetwork() {
   return (
-    <section id="network" className="section network-section section-space">
+    <section id="network" className="section network-section">
       <div className="shell">
         <div className="section-head split-head network-head" data-reveal>
           <h2 className="type-h2">Our Global Supplier Network</h2>
@@ -77,6 +77,8 @@ export default function SupplierNetwork() {
           </div>
         </div>
       </div>
+       
     </section>
+   
   );
 }
