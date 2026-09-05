@@ -92,7 +92,7 @@ main {
 }
 
 .section {
-  padding: 86px 0;
+  padding: 66px 0;
 }
 
 .section-space {
@@ -598,7 +598,7 @@ main {
 ========================================================== */
 
 .process-section {
-  border-top: 1px solid #edf0f3;
+  border-top: 1px solid #dfe3e8;
 }
 
 .process-section .compact-head {
@@ -2518,7 +2518,7 @@ h5 {
 @media (max-width: 1200px) {
   :root {
     --page-gutter: 24px;
-    --section-space: 84px;
+    --section-space: 64px;
   }
 
   .hero-grid {
