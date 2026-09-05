@@ -25,7 +25,7 @@ export default function Footer() {
           <div>
             <span>Company</span>
             <a href="#top">Home</a>
-            <a href="#about">About</a>
+            <a href="#about">Who We Are</a>
             <a href="#network">Global Sourcing</a>
             <a href="#trade">Markets</a>
             <a href="#contact">Contact</a>
@@ -68,7 +68,7 @@ export default function Footer() {
       <div className="footer-wood" aria-hidden="true" />
 
       <div className="footer-copyright">
-        © 2026 Trueline Global Trading. All rights reserved. Concept by Repute.
+        © 2026 Trueline Global Trading. All rights reserved. Concept by &nbsp;<a href="https://irepute.in" target="_blank">repute.</a>
       </div>
     </footer>
   );
