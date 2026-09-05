@@ -318,7 +318,7 @@ main {
 ========================================================== */
 
 .network-section {
-  background: #fff;
+  background: #fff; border-bottom:1px solid #dfe3e8;
 }
 
 .network-head {
