@@ -1802,8 +1802,8 @@ main {
 .stats-strip {
   position: relative;
   background: #fff;
-  border-top: 1px solid #edf0f3;
-  border-bottom: 1px solid #edf0f3;
+  border-top: 1px solid #dfe3e8;
+  border-bottom: 1px solid #dfe3e8;
 }
 
 .stats-grid {
