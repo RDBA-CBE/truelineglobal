@@ -2691,12 +2691,12 @@ h5 {
 
 }
 .mt-45{margin-top:60px;}
+
 @media (max-width: 1660px) {
   .mt-45 {
-    display: none;
+    margin-top: 0;
   }
 }
-
 /* Product section */
 /* =========================================================
    PRODUCTS SECTION
