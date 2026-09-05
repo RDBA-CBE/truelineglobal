@@ -35,7 +35,7 @@
   --font-ui: "IBM Plex Sans", sans-serif;
   --accent: #B38A48;
   --type-body-color: #393D45;
-  --section-space: 70px;
+  --section-space: 66px;
 }
 
 /* ==========================================================
@@ -318,7 +318,7 @@ main {
 ========================================================== */
 
 .network-section {
-  background: #fff; border-bottom: 1px solid #dfe3e8;
+  background: #fff;
 }
 
 .network-head {
@@ -4489,4 +4489,16 @@ body.enquiry-modal-open {
   .enquiry-form-heading h3 {
     font-size: 28px;
   }
+}
+
+/* ==========================================================
+   FINAL CONTAINER WIDTH SYNC
+   Header shell is the source of truth for section/footer content width.
+========================================================== */
+.shell,
+.products-shell,
+.values-shell,
+.inquiry-grid {
+  width: min(var(--shell), calc(100% - var(--page-gutter) - var(--page-gutter)));
+  margin-inline: auto;
 }
