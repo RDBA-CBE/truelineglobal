@@ -2691,7 +2691,11 @@ h5 {
 
 }
 .mt-45{margin-top:60px;}
-
+@media (max-width: 1660px) {
+  .mt-45 {
+    display: none;
+  }
+}
 
 /* Product section */
 /* =========================================================
@@ -4501,4 +4505,25 @@ body.enquiry-modal-open {
 .inquiry-grid {
   width: min(var(--shell), calc(100% - var(--page-gutter) - var(--page-gutter)));
   margin-inline: auto;
+}
+/* Standard desktop / 1440-class screens */
+@media (max-width: 1599px) {
+  :root {
+    --page-gutter: 44px; /* was 32px */
+  }
+}
+
+/* 1366 / 1336-class laptops */
+@media (max-width: 1366px) {
+  :root {
+    --page-gutter: 36px; /* was 28px */
+  }
+
+  .hero-grid {
+    gap: 64px;
+  }
+
+  .products-heading {
+    gap: 48px;
+  }
 }
