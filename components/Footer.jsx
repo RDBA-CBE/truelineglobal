@@ -67,9 +67,14 @@ export default function Footer() {
 
       <div className="footer-wood" aria-hidden="true" />
 
-      <div className="footer-copyright">
-        © 2026 Trueline Global Trading. All rights reserved. Concept by &nbsp;<a href="https://irepute.in" target="_blank">repute.</a>
-      </div>
+     <div className="footer-copyright">
+  <span>
+    © 2026 Trueline Global Trading. All rights reserved.{' '}
+    <span className="footer-credit">
+      Concept by <a href="https://irepute.in" target="_blank" rel="noopener noreferrer">repute.</a>
+    </span>
+  </span>
+</div>
     </footer>
   );
 }

@@ -4527,3 +4527,10 @@ body.enquiry-modal-open {
     gap: 48px;
   }
 }
+.footer-credit {
+  white-space: nowrap;
+}
+
+.footer-copyright a {
+  margin-left: 4px;
+}
