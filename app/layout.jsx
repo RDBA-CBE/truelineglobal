@@ -15,7 +15,8 @@ export default function RootLayout({ children }) {
           href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=IBM+Plex+Sans:wght@500;700&family=Manrope:wght@200..800&display=swap"
           rel="stylesheet"
         />
-      </head>
+        <link rel="icon" type="image/png" href="/images/favicon.png" />
+     </head>
       <body>{children}</body>
     </html>
   );

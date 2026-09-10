@@ -60,7 +60,7 @@ export default function Footer() {
             <a className="footer-email" href="mailto:info@truelineglobal.net">
               info@truelineglobal.net
             </a>
-            <p>+971 XXXXXXX</p>
+            <p><a href="tel:+971564010123">+971 56 401 0123</a></p>
           </div>
         </div>
       </div>
