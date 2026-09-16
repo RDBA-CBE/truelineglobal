@@ -15,7 +15,7 @@ export default function SupplierNetwork() {
 
         <div className="network-image" data-image-reveal>
           <Image
-            src="/images/global-network.webp"
+            src="/images/tg/our-global-HL.webp"
             alt="Global timber supplier warehouse"
             fill
             sizes="100vw"

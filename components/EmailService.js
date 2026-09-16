@@ -2,65 +2,26 @@
 
 import emailjs from '@emailjs/browser';
 
-const SERVICE_ID = 'service_txoc0be';
-const ADMIN_TEMPLATE_ID = 'template_qyok2ea';
-const PUBLIC_KEY = 'Wp8hElj8QnN1Oi_gY';
-const ADMIN_EMAIL = 'rdba.developer@gmail.com';
+const SERVICE_ID = 'service_0emsbde';
+const TEMPLATE_ID = 'template_z81f8g9';
+const PUBLIC_KEY = 'Gg876jBj2IFChURun';
 
 export async function sendEnquiryEmail(formData) {
-  const adminParams = {
-    /*
-     * Recipient
-     */
-    to_email: ADMIN_EMAIL,
-
-    /*
-     * Required fields
-     */
-    fullName: formData.fullName?.trim() || '',
+  const params = {
+    name: formData.name?.trim() || '',
     email: formData.email?.trim() || '',
-    enquiryType:
-      formData.enquiryType?.trim() || 'Buyer / Importer',
-    specification:
-      formData.specification?.trim() || '',
-
-    /*
-     * Optional fields
-     */
+    enquiryType: formData.enquiryType?.trim() || 'Buyer / Importer',
+    message: formData.message?.trim() || '',
     company: formData.company?.trim() || '',
     phone: formData.phone?.trim() || '',
     country: formData.country?.trim() || '',
     product: formData.product?.trim() || '',
     quantity: formData.quantity?.trim() || '',
-    requiredOrigin:
-      formData.requiredOrigin?.trim() || '',
-    destination:
-      formData.destination?.trim() || '',
-
-    /*
-     * Extra information
-     */
+    origin: formData.origin?.trim() || '',
+    destination: formData.destination?.trim() || '',
     time: new Date().toLocaleString(),
-
-    pageUrl:
-      typeof window !== 'undefined'
-        ? window.location.href
-        : '',
+    pageUrl: typeof window !== 'undefined' ? window.location.href : '',
   };
 
-  try {
-    const response = await emailjs.send(
-      SERVICE_ID,
-      ADMIN_TEMPLATE_ID,
-      adminParams,
-      {
-        publicKey: PUBLIC_KEY,
-      }
-    );
-
-    return response;
-  } catch (error) {
-    console.error('EmailJS send error:', error);
-    throw error;
-  }
+  return emailjs.send(SERVICE_ID, TEMPLATE_ID, params, { publicKey: PUBLIC_KEY });
 }

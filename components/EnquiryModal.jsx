@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { Check, X } from 'lucide-react';
 import { ENQUIRY_MODAL_EVENT } from './EnquiryTrigger';
+import { sendEnquiryEmail } from './EmailService';
 
 const initialStatus = { state: 'idle', message: '' };
 
@@ -122,23 +123,12 @@ export default function EnquiryModal() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const form = event.currentTarget;
-    const formData = new FormData(form);
+    const formData = Object.fromEntries(new FormData(form).entries());
 
     setStatus({ state: 'submitting', message: 'Sending your enquiry…' });
 
     try {
-      const response = await fetch('/api/enquiry', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(Object.fromEntries(formData.entries())),
-      });
-
-      const result = await response.json().catch(() => ({}));
-
-      if (!response.ok) {
-        throw new Error(result.error || 'Unable to send your enquiry right now.');
-      }
-
+      await sendEnquiryEmail(formData);
       form.reset();
       setStatus({
         state: 'success',
@@ -147,7 +137,7 @@ export default function EnquiryModal() {
     } catch (error) {
       setStatus({
         state: 'error',
-        message: error.message || 'Unable to send your enquiry right now.',
+        message: 'Unable to send your enquiry right now.',
       });
     }
   };

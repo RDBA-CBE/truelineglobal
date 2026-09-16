@@ -29,7 +29,7 @@ export default function TradeBridge() {
       <div className="shell trade-grid">
         <div className="trade-image" data-image-reveal>
           <Image
-            src="/images/connecting-suppliers.webp"
+            src="/images/tg/connecting-suppliers.webp"
             alt="International building material transport and trade"
             fill
             sizes="(max-width: 900px) 100vw, 36vw"

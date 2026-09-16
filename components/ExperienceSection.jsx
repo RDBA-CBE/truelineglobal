@@ -8,7 +8,7 @@ export default function ExperienceSection() {
         <div className="experience-left" data-reveal>
           <p className="eyebrow gold type-eyebrow">Experience &amp; Reach</p>
           <h2 className="type-h2">More Than 15 Years of<br />International Business<br />Experience</h2>
-          <div className="experience-image" data-image-reveal><Image src="/images/business-exp.webp" alt="Timber logistics and warehousing" fill sizes="(max-width: 900px) 100vw, 48vw" /></div>
+          <div className="experience-image" data-image-reveal><Image src="/images/tg/international-sales.webp" alt="Timber logistics and warehousing" fill sizes="(max-width: 500px) 100vw, 48vw" /></div>
         </div>
         <div className="experience-list" data-stagger>
           <p className="gold lead-label">Our business is supported by extensive professional experience in:</p>

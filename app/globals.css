@@ -250,7 +250,7 @@ main {
   position: relative;
   margin-top: 30px;
   width: 100%;
-  aspect-ratio: 1.88 / 1;
+  aspect-ratio: 1.1 / 1 !important;
   overflow: hidden;
   background: #0b234b;
 }
@@ -724,8 +724,8 @@ main {
 .trade-image {
   position: relative;
   width: 100%;
-  min-height: 0;
-  aspect-ratio: 1.02 / 1;
+  min-height: 620;
+ /* aspect-ratio: 1.02 / 1;*/
   overflow: hidden;
   background: #13294e;
 }
