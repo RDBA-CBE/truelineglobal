@@ -350,7 +350,7 @@ main {
   position: relative;
   width: 100%;
   aspect-ratio: 5.35 / 1;
-  min-height: 250px;
+  min-height: 230px;
   overflow: hidden;
   background: #edf0f2;
 }
