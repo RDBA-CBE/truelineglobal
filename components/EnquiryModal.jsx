@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { Check, X } from 'lucide-react';
+import { Check, MessageCircle, X } from 'lucide-react';
 import { ENQUIRY_MODAL_EVENT } from './EnquiryTrigger';
 import { sendEnquiryEmail } from './EmailService';
 
@@ -171,6 +171,31 @@ export default function EnquiryModal() {
             <span><Check size={16} /> Supplier and origin evaluation</span>
             <span><Check size={16} /> Commercial and logistics coordination</span>
           </div>
+
+ <a
+    href="https://wa.me/971564010123"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="enquiry-whatsapp-link"
+    aria-label="Enquire now on WhatsApp"
+  >
+    <span className="whatsapp-icon">
+      <svg
+        viewBox="0 0 32 32"
+        aria-hidden="true"
+      >
+        <path
+          fill="#25D366"
+          d="M16.01 3C8.83 3 3 8.82 3 16c0 2.29.6 4.53 1.74 6.51L3.05 29l6.63-1.64A12.93 12.93 0 0 0 16 29c7.18 0 13-5.82 13-13S23.19 3 16.01 3Zm0 23.67c-2.03 0-4.02-.54-5.76-1.57l-.41-.24-3.94.98 1.05-3.83-.27-.42A10.88 10.88 0 0 1 5.13 16c0-6 4.88-10.87 10.88-10.87S26.88 10 26.88 16s-4.87 10.67-10.87 10.67Zm5.96-8.16c-.33-.17-1.94-.96-2.24-1.07-.3-.11-.52-.17-.74.17-.22.33-.85 1.07-1.04 1.29-.19.22-.38.25-.7.08-.33-.17-1.39-.51-2.65-1.63-.98-.87-1.64-1.94-1.83-2.27-.19-.33-.02-.51.14-.68.15-.15.33-.38.49-.57.16-.19.22-.33.33-.55.11-.22.06-.41-.03-.57-.08-.17-.74-1.79-1.02-2.45-.27-.65-.54-.56-.74-.57h-.63c-.22 0-.57.08-.87.41-.3.33-1.14 1.11-1.14 2.71s1.17 3.14 1.33 3.36c.16.22 2.3 3.51 5.57 4.92.78.34 1.39.54 1.86.69.78.25 1.49.22 2.05.13.63-.09 1.94-.79 2.21-1.55.27-.76.27-1.41.19-1.55-.08-.14-.3-.22-.63-.39Z"
+        />
+      </svg>
+    </span>
+
+    <span className="whatsapp-content">
+      <strong>Enquire now on WhatsApp</strong>
+      <span>+971 56 401 0123</span>
+    </span>
+  </a>
         </aside>
 
         <div ref={formWrapRef} className="enquiry-modal-form-wrap">

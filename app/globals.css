@@ -4534,3 +4534,57 @@ body.enquiry-modal-open {
 .footer-copyright a {
   margin-left: 4px;
 }
+
+.enquiry-whatsapp-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 28px;
+  padding: 14px 16px;
+  width: fit-content;
+  max-width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.enquiry-whatsapp-link:hover {
+  background: rgba(255, 255, 255, 0.11);
+  border-color: rgba(255, 255, 255, 0.45);
+  color: #ffffff;
+}
+
+.whatsapp-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #25D366;
+}
+
+.whatsapp-icon svg {
+  width: 22px;
+  height: 22px;
+  stroke-width: 2.2;
+}
+
+.whatsapp-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  line-height: 1.3;
+}
+
+.whatsapp-content strong {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.whatsapp-content span {
+  font-size: 14px;
+  font-weight: 400;
+  opacity: 0.9;
+}
