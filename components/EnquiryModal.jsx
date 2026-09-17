@@ -177,7 +177,7 @@ export default function EnquiryModal() {
     target="_blank"
     rel="noopener noreferrer"
     className="enquiry-whatsapp-link"
-    aria-label="Enquire now on WhatsApp"
+    aria-label="Enquire via WhatsApp"
   >
     <span className="whatsapp-icon">
       <svg

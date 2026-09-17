@@ -23,7 +23,7 @@ export default function DifferenceSection() {
 
           <div className="difference-detail" data-image-reveal>
             <Image
-              src="/images/tg/g2.webp"
+              src="/images/brand/g2.webp"
               alt="Timber quality control and measurement"
               fill
               sizes="(max-width: 900px) 100vw, 38vw"

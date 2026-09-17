@@ -11,7 +11,7 @@ import { createPortal } from 'react-dom';
 const productGroups = {
   plywood: {
     title: 'PLYWOOD',
-    image: '/images/tg/plywood.png',
+    image: '/images/brand/plywood.webp',
     imageAlt: 'Plywood products',
 
     items: [
@@ -47,7 +47,7 @@ const productGroups = {
   panels: {
     title: 'MDF & PANEL PRODUCTS',
 
-    image: '/images/tg/MDF-panel-products.webp',
+    image: '/images/brand/MDF-panel-products.webp',
     imageAlt: 'MDF and panel products',
 
     items: [
@@ -115,7 +115,7 @@ const productGroups = {
     intro:
       'Our sourcing network provides access to a variety of softwoods and hardwoods for construction, carpentry, furniture, and other applications.',
 
-    image: '/images/tg/timber-wood-products.webp',
+    image: '/images/brand/timber-wood.webp',
     imageAlt: 'Timber and wood products',
 
     items: [
@@ -164,7 +164,7 @@ const productGroups = {
   building: {
     title: 'OTHER BUILDING MATERIALS',
 
-    image: '/images/tg/other-building-materials.webp',
+    image: '/images/brand/other-building-materials.webp',
     imageAlt: 'Other building materials',
 
     items: [
@@ -494,7 +494,7 @@ export default function ProductsSection() {
 
               <div className="product-media product-plywood-image">
                 <Image
-                  src="/images/tg/plywood.png"
+                  src="/images/brand/plywood.webp"
                   alt="Plywood products"
                   fill
                   sizes="(max-width: 820px) 100vw, 35vw"
@@ -528,7 +528,7 @@ export default function ProductsSection() {
 
               <div className="product-media product-panels-image">
                 <Image
-                  src="/images/tg/MDF-panel-products.webp"
+                  src="/images/brand/MDF-panel-products.webp"
                   alt="MDF and panel products"
                   fill
                   sizes="(max-width: 820px) 100vw, 18vw"
@@ -570,7 +570,7 @@ export default function ProductsSection() {
 
               <div className="product-media product-timber-image">
                 <Image
-                  src="/images/tg/timber-wood-products.webp"
+                  src="/images/brand/timber-wood.webp"
                   alt="Timber and wood products"
                   fill
                   sizes="(max-width: 820px) 100vw, 25vw"
@@ -629,7 +629,7 @@ export default function ProductsSection() {
 
               <div className="product-media product-building-image">
                 <Image
-                  src="/images/tg/other-building-materials.webp"
+                  src="/images/brand/other-building-materials.webp"
                   alt="Other building materials"
                   fill
                   sizes="(max-width: 820px) 100vw, 18vw"
