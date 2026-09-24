@@ -47,7 +47,7 @@ const productGroups = {
   panels: {
     title: 'MDF & PANEL PRODUCTS',
 
-    image: '/images/brand/MDF-panel-products.webp',
+    image: '/images/brand/MDF-panel-products1.webp',
     imageAlt: 'MDF and panel products',
 
     items: [
@@ -164,7 +164,7 @@ const productGroups = {
   building: {
     title: 'OTHER BUILDING MATERIALS',
 
-    image: '/images/brand/other-building-materials.webp',
+    image: '/images/brand/other-building-materials1.webp',
     imageAlt: 'Other building materials',
 
     items: [
@@ -528,7 +528,7 @@ export default function ProductsSection() {
 
               <div className="product-media product-panels-image">
                 <Image
-                  src="/images/brand/MDF-panel-products.webp"
+                  src="/images/brand/MDF-panel-products1.webp"
                   alt="MDF and panel products"
                   fill
                   sizes="(max-width: 820px) 100vw, 18vw"
@@ -629,7 +629,7 @@ export default function ProductsSection() {
 
               <div className="product-media product-building-image">
                 <Image
-                  src="/images/brand/other-building-materials.webp"
+                  src="/images/brand/other-building-materials1.webp"
                   alt="Other building materials"
                   fill
                   sizes="(max-width: 820px) 100vw, 18vw"
