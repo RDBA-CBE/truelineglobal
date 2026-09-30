@@ -23,7 +23,7 @@ export default function DifferenceSection() {
 
           <div className="difference-detail" data-image-reveal>
             <Image
-              src="/images/brand/6.webp"
+              src="/images/new/experience-difference-1.webp"
               alt="Timber quality control and measurement"
               fill
               sizes="(max-width: 900px) 100vw, 38vw"
@@ -34,7 +34,7 @@ export default function DifferenceSection() {
         <div className="difference-bottom">
           <div className="difference-ship" data-image-reveal>
             <Image
-              src="/images/brand/8.webp"
+              src="/images/new/experience-difference-2.webp"
               alt="International cargo vessel"
               fill
               sizes="(max-width: 900px) 100vw, 42vw"

@@ -7,33 +7,30 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 const heroSlides = [
   
  {
-    src: '/images/banner-3.webp',
+    src: '/images/new/banner-01.webp',
     alt: 'Connecting Global Sources to Growing Markets',
   },
   {
-     src: '/images/banner-4.webp',
+     src: '/images/new/banner-02.webp',
     alt: 'Connecting Global Sources to Growing Markets',
   },
     {
-    src: '/images/banner-5.webp',
+    src: '/images/new/banner-03.webp',
     alt: 'Connecting Global Sources to Growing Markets',
   },
   {
-     src: '/images/banner-6.webp',
+     src: '/images/new/banner-04.webp',
     alt: 'Connecting Global Sources to Growing Markets',
   },
  {
-    src: '/images/banner-7.webp',
+    src: '/images/new/banner-05.webp',
     alt: 'Connecting Global Sources to Growing Markets',
   },
   {
-     src: '/images/banner-8.webp',
+     src: '/images/new/banner-6.webp',
     alt: 'Connecting Global Sources to Growing Markets',
   },
-   {
-     src: '/images/banner-9.webp',
-    alt: 'Connecting Global Sources to Growing Markets',
-  },
+
 ];
 
 const AUTOPLAY_DELAY = 5500;
