@@ -6,31 +6,48 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const heroSlides = [
   
+//  {
+//     src: '/images/new/banner-01.webp',
+//     alt: 'Connecting Global Sources to Growing Markets',
+//   },
+//   {
+//      src: '/images/new/banner-02.webp',
+//     alt: 'Connecting Global Sources to Growing Markets',
+//   },
+//     {
+//     src: '/images/new/banner-03.webp',
+//     alt: 'Connecting Global Sources to Growing Markets',
+//   },
+//   {
+//      src: '/images/new/banner-04.webp',
+//     alt: 'Connecting Global Sources to Growing Markets',
+//   },
+//  {
+//     src: '/images/new/banner-05.webp',
+//     alt: 'Connecting Global Sources to Growing Markets',
+//   },
+//   {
+//      src: '/images/new/banner-6.webp',
+//     alt: 'Connecting Global Sources to Growing Markets',
+//   },
+
  {
-    src: '/images/new/banner-01.webp',
+    src: '/images/tg/banner-01.webp',
     alt: 'Connecting Global Sources to Growing Markets',
   },
   {
-     src: '/images/new/banner-02.webp',
+   src: '/images/tg/banner-02.webp',
     alt: 'Connecting Global Sources to Growing Markets',
   },
     {
-    src: '/images/new/banner-03.webp',
+   src: '/images/tg/banner-03.webp',
     alt: 'Connecting Global Sources to Growing Markets',
   },
   {
-     src: '/images/new/banner-04.webp',
+    src: '/images/tg/banner-04.webp',
     alt: 'Connecting Global Sources to Growing Markets',
   },
- {
-    src: '/images/new/banner-05.webp',
-    alt: 'Connecting Global Sources to Growing Markets',
-  },
-  {
-     src: '/images/new/banner-6.webp',
-    alt: 'Connecting Global Sources to Growing Markets',
-  },
-
+ 
 ];
 
 const AUTOPLAY_DELAY = 5500;

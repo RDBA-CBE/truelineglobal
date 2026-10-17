@@ -25,7 +25,7 @@ export default function DeliveryProcess() {
 
         <div className="process-image" data-image-reveal>
           <Image
-            src="/images/new/delivery-to-process.webp"
+            src="/images/tg/process.webp"
             alt="Timber production and delivery process"
             fill
             sizes="100vw"

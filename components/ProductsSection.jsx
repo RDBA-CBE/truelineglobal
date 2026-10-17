@@ -11,7 +11,11 @@ import { createPortal } from 'react-dom';
 const productGroups = {
   plywood: {
     title: 'PLYWOOD',
-    image: '/images/brand/plywood.webp',
+    images: [
+      '/images/tg/plywood.webp',
+      '/images/tg/Film-Faced-Plywood.webp',
+      '/images/tg/Commercial-Plywood.webp',
+    ],
     imageAlt: 'Plywood products',
 
     items: [
@@ -46,8 +50,15 @@ const productGroups = {
 
   panels: {
     title: 'MDF & PANEL PRODUCTS',
-
-    image: '/images/brand/MDF-panel-products1.webp',
+    images: [
+      '/images/tg/MDF.webp',
+      '/images/tg/Melamine-MDF.webp',
+      '/images/tg/HMR-MDF.webp',
+       '/images/tg/FR-MDF.webp',
+      '/images/tg/Jumbo-MDF.webp',
+      '/images/tg/Solid-Chipboard.webp',
+      '/images/tg/Hollow-Chipboard.webp',
+    ],
     imageAlt: 'MDF and panel products',
 
     items: [
@@ -109,13 +120,16 @@ const productGroups = {
 
   timber: {
     title: 'TIMBER & WOOD',
-
     subtitle: 'Natural Wood Products',
-
     intro:
       'Our sourcing network provides access to a variety of softwoods and hardwoods for construction, carpentry, furniture, and other applications.',
-
-    image: '/images/brand/timber-wood.webp',
+    images: [
+      '/images/tg/white-wood.webp',
+      '/images/tg/pine.webp',
+      '/images/tg/beech.webp',
+      '/images/tg/malaysian-hardwoods.webp',
+      '/images/tg/african-hardwoods.webp',
+    ],
     imageAlt: 'Timber and wood products',
 
     items: [
@@ -163,8 +177,10 @@ const productGroups = {
 
   building: {
     title: 'OTHER BUILDING MATERIALS',
-
-    image: '/images/brand/other-building-materials1.webp',
+    images: [
+      '/images/tg/tiles.webp',
+      '/images/tg/steel-rebar.webp',
+    ],
     imageAlt: 'Other building materials',
 
     items: [
@@ -183,32 +199,80 @@ const productGroups = {
    SHORT CONTENT DISPLAYED IN MAIN MOSAIC
 ========================================================= */
 
-const plywood = ['Film Faced Plywood', 'Commercial Plywood'];
+const plywood = [
+  { label: 'Film Faced Plywood',  image: '/images/tg/Film-Faced-Plywood.webp' },
+  { label: 'Commercial Plywood',  image: '/images/tg/Commercial-Plywood.webp' },
+];
 
 const timber = [
-  'White Wood',
-  'Pine Wood',
-  'Beech Wood',
-  'Malaysian Hardwoods',
-  'African Hardwoods',
+  { label: 'White Wood',          image: '/images/tg/white-wood.webp' },
+  { label: 'Pine Wood',           image: '/images/tg/pine.webp' },
+  { label: 'Beech Wood',          image: '/images/tg/beech.webp' },
+  { label: 'Malaysian Hardwoods', image: '/images/tg/malaysian-hardwoods.webp' },
+  { label: 'African Hardwoods',   image: '/images/tg/african-hardwoods.webp' },
 ];
 
 const panels = [
-  'MDF',
-  'Melamine MDF',
-  'HMR MDF',
-  'FR MDF',
-  'Jumbo MDF',
-  'Solid Chipboard',
-  'Hollow Chipboard',
+  { label: 'MDF',               image: '/images/tg/MDF.webp' },
+  { label: 'Melamine MDF',      image: '/images/tg/Melamine-MDF.webp' },
+  { label: 'HMR MDF',          image: '/images/tg/HMR-MDF.webp' },
+  { label: 'FR MDF',           image: '/images/tg/FR-MDF.webp' },
+  { label: 'Jumbo MDF',        image: '/images/tg/Jumbo-MDF.webp' },
+  { label: 'Solid Chipboard',  image: '/images/tg/Solid-Chipboard.webp' },
+  { label: 'Hollow Chipboard', image: '/images/tg/Hollow-Chipboard.webp' },
 ];
 
-const building = ['Tiles', 'Steel Rebar'];
+const building = [
+  { label: 'Tiles',       image: '/images/tg/tiles.webp' },
+  { label: 'Steel Rebar', image: '/images/tg/steel-rebar.webp' },
+];
 
 
 /* =========================================================
-   KNOW MORE BUTTON
+   HOVER IMAGE — crossfades between two src values
 ========================================================= */
+
+function HoverImage({ defaultSrc, activeSrc, alt, sizes, priority }) {
+  const [displayed, setDisplayed] = useState(defaultSrc);
+  const [fading, setFading]       = useState(null);
+
+  useEffect(() => {
+    const next = activeSrc || defaultSrc;
+    if (next === displayed) return;
+    setFading(displayed);
+    setDisplayed(next);
+    const t = setTimeout(() => setFading(null), 420);
+    return () => clearTimeout(t);
+  }, [activeSrc, defaultSrc]);
+
+  return (
+    <>
+      <Image
+        key={displayed}
+        src={displayed}
+        alt={alt}
+        fill
+        sizes={sizes}
+        className="product-img"
+        priority={priority}
+        style={{ opacity: 1, transition: 'opacity 0.4s ease' }}
+      />
+      {fading && (
+        <Image
+          key={`fade-${fading}`}
+          src={fading}
+          alt=""
+          fill
+          sizes={sizes}
+          className="product-img"
+          aria-hidden
+          style={{ opacity: 0, transition: 'opacity 0.4s ease', pointerEvents: 'none' }}
+        />
+      )}
+    </>
+  );
+}
+
 
 function KnowMoreButton({ product, onClick }) {
   return (
@@ -239,6 +303,13 @@ function ProductModal({ productKey, onClose }) {
   const product = productGroups[productKey];
   const modalRef = useRef(null);
   const contentRef = useRef(null);
+  const [slide, setSlide] = useState(0);
+
+  useEffect(() => { setSlide(0); }, [productKey]);
+
+  const images = product?.images ?? [];
+  const prev = () => setSlide(s => (s - 1 + images.length) % images.length);
+  const next = () => setSlide(s => (s + 1) % images.length);
 
   useEffect(() => {
     if (!product) return undefined;
@@ -374,13 +445,46 @@ function ProductModal({ productKey, onClose }) {
         </button>
 
         <div className="product-modal-media">
-          <Image
-            src={product.image}
-            alt={product.imageAlt}
-            fill
-            sizes="(max-width: 820px) 100vw, 45vw"
-            className="product-modal-img"
-          />
+          {images.map((src, i) => (
+            <Image
+              key={src}
+              src={src}
+              alt={i === 0 ? product.imageAlt : ''}
+              fill
+              sizes="(max-width: 820px) 100vw, 45vw"
+              className="product-modal-img"
+              style={{
+                opacity: i === slide ? 1 : 0,
+                transition: 'opacity 0.45s ease',
+                zIndex: i === slide ? 1 : 0,
+              }}
+            />
+          ))}
+
+          {images.length > 1 && (
+            <>
+              <button
+                className="modal-slide-btn modal-slide-prev"
+                onClick={prev}
+                aria-label="Previous image"
+              >‹</button>
+              <button
+                className="modal-slide-btn modal-slide-next"
+                onClick={next}
+                aria-label="Next image"
+              >›</button>
+              <div className="modal-slide-dots">
+                {images.map((_, i) => (
+                  <button
+                    key={i}
+                    className={`modal-slide-dot${i === slide ? ' is-active' : ''}`}
+                    onClick={() => setSlide(i)}
+                    aria-label={`Go to image ${i + 1}`}
+                  />
+                ))}
+              </div>
+            </>
+          )}
         </div>
 
         <div ref={contentRef} className="product-modal-content">
@@ -437,12 +541,13 @@ function ProductModal({ productKey, onClose }) {
 ========================================================= */
 
 export default function ProductsSection() {
-  const [activeProduct, setActiveProduct] =
-    useState(null);
+  const [activeProduct, setActiveProduct] = useState(null);
+  const [hovered, setHovered] = useState({});
 
-  const closeModal = () => {
-    setActiveProduct(null);
-  };
+  const closeModal = () => setActiveProduct(null);
+
+  const onEnter = (group, image) => setHovered(h => ({ ...h, [group]: image }));
+  const onLeave = (group)        => setHovered(h => ({ ...h, [group]: null }));
 
   return (
     <>
@@ -493,12 +598,11 @@ export default function ProductsSection() {
               {/* PLYWOOD IMAGE */}
 
               <div className="product-media product-plywood-image">
-                <Image
-                  src="/images/brand/plywood.webp"
+                <HoverImage
+                  defaultSrc="/images/tg/plywood.webp"
+                  activeSrc={hovered.plywood}
                   alt="Plywood products"
-                  fill
                   sizes="(max-width: 820px) 100vw, 35vw"
-                  className="product-img"
                   priority={false}
                 />
               </div>
@@ -511,28 +615,28 @@ export default function ProductsSection() {
 
                 <ul>
                   {plywood.map((item) => (
-                    <li key={item}>
-                      {item}
+                    <li
+                      key={item.label}
+                      onMouseEnter={() => onEnter('plywood', item.image)}
+                      onMouseLeave={() => onLeave('plywood')}
+                    >
+                      {item.label}
                     </li>
                   ))}
                 </ul>
 
-                <KnowMoreButton
-                  product="plywood"
-                  onClick={setActiveProduct}
-                />
+                <KnowMoreButton product="plywood" onClick={setActiveProduct} />
               </div>
 
 
               {/* PANELS IMAGE */}
 
               <div className="product-media product-panels-image">
-                <Image
-                  src="/images/brand/MDF-panel-products1.webp"
+                <HoverImage
+                  defaultSrc="/images/tg/MDF.webp"
+                  activeSrc={hovered.panels}
                   alt="MDF and panel products"
-                  fill
                   sizes="(max-width: 820px) 100vw, 18vw"
-                  className="product-img"
                 />
               </div>
 
@@ -540,22 +644,21 @@ export default function ProductsSection() {
               {/* PANELS CARD */}
 
               <div className="product-info product-dark product-panels-info">
-                <h3>
-                  MDF &amp; PANEL PRODUCTS
-                </h3>
+                <h3>MDF &amp; PANEL PRODUCTS</h3>
 
                 <ul>
                   {panels.map((item) => (
-                    <li key={item}>
-                      {item}
+                    <li
+                      key={item.label}
+                      onMouseEnter={() => onEnter('panels', item.image)}
+                      onMouseLeave={() => onLeave('panels')}
+                    >
+                      {item.label}
                     </li>
                   ))}
                 </ul>
 
-                <KnowMoreButton
-                  product="panels"
-                  onClick={setActiveProduct}
-                />
+                <KnowMoreButton product="panels" onClick={setActiveProduct} />
               </div>
             </div>
 
@@ -569,12 +672,11 @@ export default function ProductsSection() {
               {/* TIMBER IMAGE */}
 
               <div className="product-media product-timber-image">
-                <Image
-                  src="/images/brand/timber-wood.webp"
+                <HoverImage
+                  defaultSrc="/images/tg/timber-wood.webp"
+                  activeSrc={hovered.timber}
                   alt="Timber and wood products"
-                  fill
                   sizes="(max-width: 820px) 100vw, 25vw"
-                  className="product-img"
                 />
               </div>
 
@@ -582,22 +684,21 @@ export default function ProductsSection() {
               {/* TIMBER CARD */}
 
               <div className="product-info product-timber-info">
-                <h3>
-                  TIMBER &amp; WOOD
-                </h3>
+                <h3>TIMBER &amp; WOOD</h3>
 
                 <ul>
                   {timber.map((item) => (
-                    <li key={item}>
-                      {item}
+                    <li
+                      key={item.label}
+                      onMouseEnter={() => onEnter('timber', item.image)}
+                      onMouseLeave={() => onLeave('timber')}
+                    >
+                      {item.label}
                     </li>
                   ))}
                 </ul>
 
-                <KnowMoreButton
-                  product="timber"
-                  onClick={setActiveProduct}
-                />
+                <KnowMoreButton product="timber" onClick={setActiveProduct} />
               </div>
 
 
@@ -612,28 +713,28 @@ export default function ProductsSection() {
 
                 <ul>
                   {building.map((item) => (
-                    <li key={item}>
-                      {item}
+                    <li
+                      key={item.label}
+                      onMouseEnter={() => onEnter('building', item.image)}
+                      onMouseLeave={() => onLeave('building')}
+                    >
+                      {item.label}
                     </li>
                   ))}
                 </ul>
 
-                <KnowMoreButton
-                  product="building"
-                  onClick={setActiveProduct}
-                />
+                <KnowMoreButton product="building" onClick={setActiveProduct} />
               </div>
 
 
               {/* OTHER MATERIALS IMAGE */}
 
               <div className="product-media product-building-image">
-                <Image
-                  src="/images/brand/other-building-materials1.webp"
+                <HoverImage
+                  defaultSrc="/images/tg/other-materials.webp"
+                  activeSrc={hovered.building}
                   alt="Other building materials"
-                  fill
                   sizes="(max-width: 820px) 100vw, 18vw"
-                  className="product-img"
                 />
               </div>
             </div>

@@ -3041,6 +3041,18 @@ h5 {
   line-height: 26px;
   font-weight: 500;
   color: #4b5260;
+  cursor: default;
+  transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.product-info li:hover {
+  color: var(--navy);
+  padding-left: 6px;
+  font-weight: 700;
+}
+
+.product-dark li:hover {
+  color: #fff;
 }
 
 .product-info li:first-child {
@@ -3239,6 +3251,60 @@ body.product-modal-open {
   min-height: 0;
   overflow: hidden;
   background: #e9e9e9;
+}
+
+.modal-slide-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.88);
+  border: 0;
+  border-radius: 50%;
+  color: var(--navy);
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.modal-slide-btn:hover {
+  background: #fff;
+  transform: translateY(-50%) scale(1.08);
+}
+
+.modal-slide-prev { left: 12px; }
+.modal-slide-next { right: 12px; }
+
+.modal-slide-dots {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  gap: 7px;
+}
+
+.modal-slide-dot {
+  width: 7px;
+  height: 7px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.45);
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.modal-slide-dot.is-active {
+  background: #fff;
+  transform: scale(1.3);
 }
 
 .product-modal-img {
