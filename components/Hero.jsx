@@ -32,19 +32,23 @@ const heroSlides = [
 //   },
 
  {
-    src: '/images/tg/banner-01.webp',
+    src: '/images/tg/b1.webp',
     alt: 'Connecting Global Sources to Growing Markets',
   },
   {
-   src: '/images/tg/banner-02.webp',
+   src: '/images/tg/b2.webp',
     alt: 'Connecting Global Sources to Growing Markets',
   },
     {
-   src: '/images/tg/banner-03.webp',
+   src: '/images/tg/b3.webp',
     alt: 'Connecting Global Sources to Growing Markets',
   },
   {
-    src: '/images/tg/banner-04.webp',
+    src: '/images/tg/b4.webp',
+    alt: 'Connecting Global Sources to Growing Markets',
+  },
+   {
+    src: '/images/tg/b5.webp',
     alt: 'Connecting Global Sources to Growing Markets',
   },
  
